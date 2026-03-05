@@ -14,21 +14,11 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 html{scroll-behavior:smooth;}
 body{background:var(--cream);color:var(--brown);font-family:'DM Sans',sans-serif;min-height:100vh;overflow-x:hidden;}
-
-/* NOISE TEXTURE */
 body::before{content:'';position:fixed;inset:0;z-index:0;opacity:.025;
   background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   background-size:200px 200px;pointer-events:none;}
 
-/* HEADER */
-.site-header{
-  position:sticky;top:0;z-index:100;
-  background:rgba(250,248,243,.92);backdrop-filter:blur(16px);
-  border-bottom:1px solid var(--border);
-  padding:0 24px;
-  display:flex;align-items:center;justify-content:space-between;
-  height:68px;
-}
+.site-header{position:sticky;top:0;z-index:100;background:rgba(250,248,243,.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:68px;}
 .logo{display:flex;align-items:center;gap:12px;text-decoration:none;}
 .logo-mark{width:40px;height:40px;background:var(--brown);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0;}
 .logo-text{font-family:'Fraunces',serif;font-size:1.3rem;font-weight:700;color:var(--brown);line-height:1;}
@@ -41,32 +31,15 @@ body::before{content:'';position:fixed;inset:0;z-index:0;opacity:.025;
 .fab-login{width:42px;height:42px;border-radius:50%;background:var(--brown);border:none;color:#fff;font-size:1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;box-shadow:var(--shadow);}
 .fab-login:hover{background:var(--amber);transform:scale(1.08);}
 
-/* HERO */
-.hero{
-  position:relative;z-index:1;
-  text-align:center;padding:80px 24px 60px;
-  background:linear-gradient(180deg,var(--warm) 0%,var(--cream) 100%);
-}
+.hero{position:relative;z-index:1;text-align:center;padding:80px 24px 60px;background:linear-gradient(180deg,var(--warm) 0%,var(--cream) 100%);}
 .hero-tag{display:inline-block;background:var(--amber2);color:var(--brown);font-size:.7rem;font-weight:700;letter-spacing:3px;padding:5px 16px;border-radius:100px;margin-bottom:20px;text-transform:uppercase;}
 .hero h1{font-family:'Fraunces',serif;font-size:clamp(2.4rem,6vw,4.2rem);font-weight:900;line-height:1.08;color:var(--brown);margin-bottom:14px;}
 .hero h1 em{font-style:italic;color:var(--amber);}
 .hero p{color:var(--muted);font-size:1rem;max-width:480px;margin:0 auto 32px;line-height:1.7;}
-.hero-cta{
-  display:inline-flex;align-items:center;gap:10px;
-  background:var(--brown);color:#fff;text-decoration:none;
-  font-weight:600;font-size:.9rem;padding:14px 28px;border-radius:12px;
-  transition:all .2s;box-shadow:0 4px 20px rgba(44,26,14,.25);
-}
-.hero-cta:hover{background:var(--brown2);transform:translateY(-2px);box-shadow:0 8px 32px rgba(44,26,14,.3);}
-.hero-cta svg{transition:transform .2s;}
-.hero-cta:hover svg{transform:translateX(4px);}
+.hero-cta{display:inline-flex;align-items:center;gap:10px;background:var(--brown);color:#fff;text-decoration:none;font-weight:600;font-size:.9rem;padding:14px 28px;border-radius:12px;transition:all .2s;box-shadow:0 4px 20px rgba(44,26,14,.25);}
+.hero-cta:hover{background:var(--brown2);transform:translateY(-2px);}
 
-/* STATS */
-.stats-row{
-  position:relative;z-index:1;
-  display:flex;justify-content:center;gap:0;
-  max-width:560px;margin:0 auto 48px;padding:0 24px;
-}
+.stats-row{position:relative;z-index:1;display:flex;justify-content:center;max-width:560px;margin:0 auto 48px;padding:0 24px;}
 .stat-box{flex:1;text-align:center;padding:18px 10px;border:1px solid var(--border);background:var(--card);}
 .stat-box:first-child{border-radius:12px 0 0 12px;}
 .stat-box:last-child{border-radius:0 12px 12px 0;}
@@ -74,110 +47,66 @@ body::before{content:'';position:fixed;inset:0;z-index:0;opacity:.025;
 .stat-val{font-family:'Fraunces',serif;font-size:1.6rem;font-weight:700;color:var(--brown);display:block;}
 .stat-lbl{font-size:.68rem;color:var(--muted);font-weight:600;letter-spacing:1.5px;text-transform:uppercase;}
 
-/* FILTERS */
 .filter-section{position:relative;z-index:1;padding:0 24px 36px;display:flex;gap:8px;flex-wrap:wrap;justify-content:center;}
-.filter-chip{
-  background:var(--card);border:1.5px solid var(--border);color:var(--muted);
-  font-family:'DM Sans',sans-serif;font-size:.82rem;font-weight:600;
-  padding:8px 18px;border-radius:100px;cursor:pointer;transition:all .2s;
-}
+.filter-chip{background:var(--card);border:1.5px solid var(--border);color:var(--muted);font-family:'DM Sans',sans-serif;font-size:.82rem;font-weight:600;padding:8px 18px;border-radius:100px;cursor:pointer;transition:all .2s;}
 .filter-chip:hover,.filter-chip.active{background:var(--brown);border-color:var(--brown);color:#fff;box-shadow:0 4px 16px rgba(44,26,14,.2);}
 
-/* SEARCH */
 .search-wrap{position:relative;z-index:1;max-width:400px;margin:0 auto 32px;padding:0 24px;}
-.search-input{
-  width:100%;background:var(--card);border:1.5px solid var(--border);
-  color:var(--brown);font-family:'DM Sans',sans-serif;font-size:.9rem;
-  padding:12px 18px 12px 44px;border-radius:50px;outline:none;transition:border-color .2s;
-}
+.search-input{width:100%;background:var(--card);border:1.5px solid var(--border);color:var(--brown);font-family:'DM Sans',sans-serif;font-size:.9rem;padding:12px 18px 12px 44px;border-radius:50px;outline:none;transition:border-color .2s;}
 .search-input:focus{border-color:var(--amber);}
 .search-icon{position:absolute;left:38px;top:50%;transform:translateY(-50%);color:var(--muted);font-size:1rem;pointer-events:none;}
 
-/* GRID */
 .products-section{position:relative;z-index:1;max-width:1200px;margin:0 auto;padding:0 24px 80px;}
 .section-title{font-family:'Fraunces',serif;font-size:1.5rem;font-weight:700;color:var(--brown);margin-bottom:24px;display:flex;align-items:center;gap:10px;}
 .section-title span{font-family:'DM Sans',sans-serif;font-size:.78rem;font-weight:600;color:var(--muted);background:var(--warm);border:1px solid var(--border);padding:3px 10px;border-radius:100px;}
+
+/* SPINNER */
+.spinner-wrap{text-align:center;padding:60px 20px;grid-column:1/-1;}
+.spinner{width:38px;height:38px;border:3px solid var(--border);border-top-color:var(--amber);border-radius:50%;animation:spin .8s linear infinite;margin:0 auto 14px;}
+@keyframes spin{to{transform:rotate(360deg);}}
 
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:20px;}
 @media(max-width:600px){.grid{grid-template-columns:repeat(2,1fr);gap:12px;}}
 @media(max-width:400px){.grid{grid-template-columns:1fr;}}
 
-/* PRODUCT CARD */
-.pcard{
-  background:var(--card);border:1.5px solid var(--border);border-radius:16px;
-  overflow:hidden;transition:all .25s;animation:cardIn .4s ease both;
-  display:flex;flex-direction:column;position:relative;
-}
+.pcard{background:var(--card);border:1.5px solid var(--border);border-radius:16px;overflow:hidden;transition:all .25s;animation:cardIn .4s ease both;display:flex;flex-direction:column;position:relative;}
 .pcard:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(44,26,14,.12);border-color:var(--amber2);}
-
-.pcard-img{
-  width:100%;aspect-ratio:4/3;object-fit:cover;background:var(--warm);
-  display:flex;align-items:center;justify-content:center;font-size:3rem;
-  flex-shrink:0;border-bottom:1px solid var(--border);
-}
+.pcard-img{width:100%;aspect-ratio:4/3;background:var(--warm);display:flex;align-items:center;justify-content:center;font-size:3rem;flex-shrink:0;border-bottom:1px solid var(--border);overflow:hidden;}
 .pcard-img img{width:100%;height:100%;object-fit:cover;}
 .pcard-img.no-img{background:linear-gradient(135deg,var(--warm),var(--border));}
-
-.pcard-badge{
-  position:absolute;top:10px;left:10px;
-  background:var(--amber);color:var(--brown);
-  font-size:.62rem;font-weight:700;padding:3px 9px;border-radius:100px;
-  letter-spacing:.5px;text-transform:uppercase;
-}
-.pcard-stock-badge{
-  position:absolute;top:10px;right:10px;
-  font-size:.62rem;font-weight:700;padding:3px 9px;border-radius:100px;
-}
+.pcard-badge{position:absolute;top:10px;left:10px;background:var(--amber);color:var(--brown);font-size:.62rem;font-weight:700;padding:3px 9px;border-radius:100px;letter-spacing:.5px;text-transform:uppercase;}
+.pcard-stock-badge{position:absolute;top:10px;right:10px;font-size:.62rem;font-weight:700;padding:3px 9px;border-radius:100px;}
 .in-stock{background:var(--green);color:#fff;}
 .low-stock{background:#f59e0b;color:#fff;}
 .out-stock{background:var(--red);color:#fff;}
-
 .pcard-body{padding:16px;flex:1;display:flex;flex-direction:column;}
 .pcard-cat{font-size:.65rem;font-weight:700;letter-spacing:2px;color:var(--amber);text-transform:uppercase;margin-bottom:4px;}
 .pcard-name{font-family:'Fraunces',serif;font-size:1.05rem;font-weight:700;color:var(--brown);margin-bottom:6px;line-height:1.3;}
-.pcard-desc{font-size:.8rem;color:var(--muted);line-height:1.55;margin-bottom:10px;flex:1;
-  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
+.pcard-desc{font-size:.8rem;color:var(--muted);line-height:1.55;margin-bottom:10px;flex:1;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
 .pcard-feats{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:12px;}
 .feat-tag{background:var(--warm);border:1px solid var(--border);color:var(--muted);font-size:.62rem;font-weight:600;padding:2px 7px;border-radius:4px;}
 .pcard-foot{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:auto;border-top:1px solid var(--border);padding-top:12px;}
 .price-wrap .price-lbl{font-size:.6rem;color:var(--muted);font-weight:600;letter-spacing:1px;text-transform:uppercase;}
 .price-val{font-family:'Fraunces',serif;font-size:1.25rem;font-weight:700;color:var(--brown);}
 .price-val small{font-family:'DM Sans',sans-serif;font-size:.75rem;color:var(--muted);font-weight:400;}
-.order-btn{
-  display:inline-flex;align-items:center;gap:6px;
-  background:var(--green);color:#fff;text-decoration:none;
-  font-size:.78rem;font-weight:700;padding:10px 14px;border-radius:8px;
-  white-space:nowrap;transition:all .2s;border:none;cursor:pointer;
-}
+.order-btn{display:inline-flex;align-items:center;gap:6px;background:var(--green);color:#fff;text-decoration:none;font-size:.78rem;font-weight:700;padding:10px 14px;border-radius:8px;white-space:nowrap;transition:all .2s;border:none;cursor:pointer;}
 .order-btn:hover{background:var(--green2);transform:scale(1.04);}
-.order-btn svg{flex-shrink:0;}
 
-/* ADMIN ACTIONS */
 .admin-actions{display:none;gap:6px;padding:10px 16px;border-top:1px solid var(--border);}
 body.admin-mode .admin-actions{display:flex;}
-.btn-edit,.btn-del{
-  flex:1;display:inline-flex;align-items:center;justify-content:center;gap:4px;
-  font-family:'DM Sans',sans-serif;font-size:.72rem;font-weight:700;
-  padding:7px;border-radius:8px;cursor:pointer;border:1.5px solid;transition:all .2s;
-}
+.btn-edit,.btn-del{flex:1;display:inline-flex;align-items:center;justify-content:center;gap:4px;font-family:'DM Sans',sans-serif;font-size:.72rem;font-weight:700;padding:7px;border-radius:8px;cursor:pointer;border:1.5px solid;transition:all .2s;}
 .btn-edit{background:rgba(212,131,42,.1);border-color:rgba(212,131,42,.3);color:var(--amber);}
 .btn-edit:hover{background:var(--amber);color:#fff;}
 .btn-del{background:rgba(192,57,43,.08);border-color:rgba(192,57,43,.2);color:var(--red);}
 .btn-del:hover{background:var(--red);color:#fff;}
 
-/* ADD CARD */
-.add-card{
-  background:transparent;border:2px dashed var(--border);border-radius:16px;
-  display:none;flex-direction:column;align-items:center;justify-content:center;
-  gap:10px;cursor:pointer;transition:all .25s;min-height:280px;text-align:center;padding:24px;
-}
+.add-card{background:transparent;border:2px dashed var(--border);border-radius:16px;display:none;flex-direction:column;align-items:center;justify-content:center;gap:10px;cursor:pointer;transition:all .25s;min-height:280px;text-align:center;padding:24px;}
 body.admin-mode .add-card{display:flex;}
 .add-card:hover{border-color:var(--amber);background:rgba(212,131,42,.05);}
 .add-card-icon{font-size:2.5rem;opacity:.3;transition:opacity .2s;}
 .add-card:hover .add-card-icon{opacity:1;}
 .add-card-text{color:var(--muted);font-size:.88rem;font-weight:600;}
 
-/* MODAL */
 .overlay{position:fixed;inset:0;z-index:1000;background:rgba(44,26,14,.6);backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center;padding:16px;opacity:0;pointer-events:none;transition:opacity .3s;}
 .overlay.open{opacity:1;pointer-events:all;}
 .modal{background:var(--card);border-radius:20px;padding:32px;width:100%;max-width:520px;max-height:94vh;overflow-y:auto;transform:translateY(20px) scale(.97);transition:transform .3s;position:relative;}
@@ -187,71 +116,47 @@ body.admin-mode .add-card{display:flex;}
 .modal h2{font-family:'Fraunces',serif;font-size:1.4rem;font-weight:700;color:var(--brown);margin-bottom:4px;}
 .modal-sub{color:var(--muted);font-size:.83rem;margin-bottom:24px;}
 
-/* FORM */
 .fg{margin-bottom:14px;}
 .fg label{display:block;font-size:.72rem;font-weight:700;color:var(--brown);letter-spacing:.8px;text-transform:uppercase;margin-bottom:6px;}
 .fg input,.fg textarea,.fg select{width:100%;background:var(--warm);border:1.5px solid var(--border);color:var(--brown);font-family:'DM Sans',sans-serif;font-size:.88rem;padding:11px 14px;border-radius:10px;outline:none;transition:border-color .2s;}
 .fg input:focus,.fg textarea:focus,.fg select:focus{border-color:var(--amber);}
 .fg textarea{resize:vertical;min-height:80px;}
-.fg select option{background:var(--card);}
 .frow{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
 .btn-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px;}
 .save-btn{background:var(--brown);color:#fff;border:none;font-family:'DM Sans',sans-serif;font-weight:700;font-size:.9rem;padding:13px;border-radius:10px;cursor:pointer;transition:all .2s;}
 .save-btn:hover{background:var(--brown2);}
+.save-btn:disabled{opacity:.5;cursor:not-allowed;}
 .cancel-btn{background:var(--warm);border:1.5px solid var(--border);color:var(--muted);font-family:'DM Sans',sans-serif;font-weight:700;font-size:.9rem;padding:13px;border-radius:10px;cursor:pointer;transition:all .2s;}
 .cancel-btn:hover{border-color:var(--brown);color:var(--brown);}
 
-/* IMAGE UPLOAD */
-.img-upload-area{
-  width:100%;aspect-ratio:16/7;border:2px dashed var(--border);border-radius:10px;
-  background:var(--warm);display:flex;flex-direction:column;align-items:center;justify-content:center;
-  gap:8px;cursor:pointer;transition:all .2s;overflow:hidden;position:relative;
-}
-.img-upload-area:hover{border-color:var(--amber);background:rgba(212,131,42,.05);}
+.img-upload-area{width:100%;aspect-ratio:16/7;border:2px dashed var(--border);border-radius:10px;background:var(--warm);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;cursor:pointer;transition:all .2s;overflow:hidden;position:relative;}
+.img-upload-area:hover{border-color:var(--amber);}
 .img-upload-area img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;}
 .img-upload-area .upload-hint{font-size:.8rem;color:var(--muted);text-align:center;z-index:1;}
 .img-upload-area .upload-icon{font-size:2rem;opacity:.4;z-index:1;}
 #fileInput{display:none;}
 
-/* LOGIN MODAL */
 .login-lock{font-size:2.5rem;text-align:center;margin-bottom:12px;}
 .pw-wrap{position:relative;}
 .pw-wrap input{padding-right:44px;}
 .pw-eye{position:absolute;right:12px;top:50%;transform:translateY(-50%);background:none;border:none;color:var(--muted);cursor:pointer;font-size:1rem;padding:0;}
 .login-err{color:var(--red);font-size:.78rem;font-weight:600;margin-top:8px;display:none;text-align:center;}
 .login-err.show{display:block;}
-
-/* DEL MODAL */
 .del-icon{font-size:2.5rem;text-align:center;margin-bottom:10px;}
-.del-btn{background:var(--red);color:#fff;border:none;font-family:'DM Sans',sans-serif;font-weight:700;font-size:.9rem;padding:13px;border-radius:10px;cursor:pointer;transition:background .2s;}
-.del-btn:hover{background:#a93226;}
+.del-btn{background:var(--red);color:#fff;border:none;font-family:'DM Sans',sans-serif;font-weight:700;font-size:.9rem;padding:13px;border-radius:10px;cursor:pointer;}
+.del-btn:disabled{opacity:.5;cursor:not-allowed;}
 
-/* TOAST */
 .toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(80px);background:var(--brown);color:#fff;font-weight:600;padding:11px 22px;border-radius:100px;z-index:9999;transition:transform .3s;font-size:.85rem;white-space:nowrap;pointer-events:none;}
 .toast.show{transform:translateX(-50%) translateY(0);}
 .toast.ok{background:var(--green);}
 .toast.err{background:var(--red);}
 .toast.warn{background:#d97706;}
 
-/* EMPTY STATE */
-.empty-state{text-align:center;padding:80px 24px;color:var(--muted);}
-.empty-state .e-icon{font-size:3rem;margin-bottom:16px;opacity:.4;}
-.empty-state p{font-size:.9rem;}
-
-/* FOOTER */
+.wa-float{position:fixed;bottom:24px;right:24px;z-index:500;width:52px;height:52px;border-radius:50%;background:#25d366;border:none;color:#fff;font-size:1.5rem;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.4);transition:all .2s;}
+.wa-float:hover{transform:scale(1.1);}
 footer{position:relative;z-index:1;text-align:center;padding:40px 24px;border-top:1px solid var(--border);background:var(--warm);color:var(--muted);font-size:.8rem;}
 footer strong{color:var(--brown);}
 footer a{color:var(--amber);text-decoration:none;}
-
-/* WA FLOAT */
-.wa-float{
-  position:fixed;bottom:24px;right:24px;z-index:500;
-  width:52px;height:52px;border-radius:50%;background:#25d366;
-  border:none;color:#fff;font-size:1.5rem;cursor:pointer;
-  display:flex;align-items:center;justify-content:center;
-  box-shadow:0 4px 20px rgba(37,211,102,.4);transition:all .2s;
-}
-.wa-float:hover{transform:scale(1.1);box-shadow:0 6px 28px rgba(37,211,102,.5);}
 
 @keyframes fadeUp{from{opacity:0;transform:translateY(18px);}to{opacity:1;transform:translateY(0);}}
 @keyframes cardIn{from{opacity:0;transform:translateY(14px) scale(.98);}to{opacity:1;transform:translateY(0) scale(1);}}
@@ -260,12 +165,11 @@ footer a{color:var(--amber);text-decoration:none;}
 </head>
 <body>
 
-<!-- HEADER -->
 <header class="site-header">
   <a href="#" class="logo">
     <div class="logo-mark">✏️</div>
     <div>
-      <div class="logo-text" id="siteName">Syakila ATK</div>
+      <div class="logo-text">Syakila ATK</div>
       <div class="logo-sub">Alat Tulis & Kantor</div>
     </div>
   </a>
@@ -278,7 +182,6 @@ footer a{color:var(--amber);text-decoration:none;}
   </div>
 </header>
 
-<!-- HERO -->
 <section class="hero">
   <div class="hero-tag">✨ Toko ATK Terpercaya</div>
   <h1>Semua Kebutuhan<br/><em>Alat Tulis</em> Kamu</h1>
@@ -289,25 +192,21 @@ footer a{color:var(--amber);text-decoration:none;}
   </a>
 </section>
 
-<!-- STATS -->
 <div class="stats-row" id="statsRow"></div>
-
-<!-- SEARCH -->
 <div class="search-wrap">
   <span class="search-icon">🔍</span>
   <input class="search-input" id="searchInput" type="text" placeholder="Cari produk ATK..."/>
 </div>
-
-<!-- FILTER -->
 <div class="filter-section" id="filterSection"></div>
 
-<!-- PRODUK -->
 <section class="products-section" id="produk">
   <div class="section-title">Semua Produk <span id="prodCount">0 item</span></div>
-  <div class="grid" id="grid"></div>
+  <div class="grid" id="grid">
+    <div class="spinner-wrap"><div class="spinner"></div><p style="color:var(--muted)">Memuat produk...</p></div>
+  </div>
 </section>
 
-<!-- OVERLAY: LOGIN -->
+<!-- LOGIN -->
 <div class="overlay" id="loginModal">
   <div class="modal" style="max-width:360px;">
     <div class="login-lock">🔐</div>
@@ -325,27 +224,24 @@ footer a{color:var(--amber);text-decoration:none;}
   </div>
 </div>
 
-<!-- OVERLAY: PRODUK (tambah/edit) -->
+<!-- PRODUK MODAL -->
 <div class="overlay" id="prodModal">
   <div class="modal">
     <button class="modal-close" id="closeProdModal">✕</button>
     <h2 id="prodModalTitle">➕ Tambah Produk</h2>
-    <p class="modal-sub" id="prodModalSub">Isi semua data produk ATK.</p>
+    <p class="modal-sub" id="prodModalSub">Produk langsung terlihat semua pelanggan.</p>
     <input type="hidden" id="fId"/>
-
-    <!-- Gambar -->
     <div class="fg">
       <label>Foto Produk</label>
       <div class="img-upload-area" id="imgUploadArea">
         <div class="upload-icon">📷</div>
-        <div class="upload-hint">Klik untuk upload foto<br/><small>JPG, PNG, WEBP — maks 5MB</small></div>
+        <div class="upload-hint">Klik untuk upload foto<br/><small>JPG, PNG — maks 1MB, dikompres otomatis</small></div>
         <img id="imgPreview" style="display:none;"/>
       </div>
       <input type="file" id="fileInput" accept="image/*"/>
     </div>
-
     <div class="frow">
-      <div class="fg"><label>Nama Produk *</label><input type="text" id="fName" placeholder="Pensil 2B Faber-Castell"/></div>
+      <div class="fg"><label>Nama Produk *</label><input type="text" id="fName" placeholder="Pensil 2B"/></div>
       <div class="fg"><label>Emoji Ikon</label><input type="text" id="fIcon" placeholder="✏️" maxlength="2"/></div>
     </div>
     <div class="frow">
@@ -359,14 +255,14 @@ footer a{color:var(--amber);text-decoration:none;}
           <option value="Lainnya">Lainnya</option>
         </select>
       </div>
-      <div class="fg"><label>Badge Label</label><input type="text" id="fBadge" placeholder="BARU / PROMO / BEST SELLER"/></div>
+      <div class="fg"><label>Badge Label</label><input type="text" id="fBadge" placeholder="BARU / PROMO"/></div>
     </div>
     <div class="fg"><label>Deskripsi *</label><textarea id="fDesc" placeholder="Deskripsi produk..."></textarea></div>
     <div class="frow">
       <div class="fg"><label>Harga (Rp) *</label><input type="number" id="fPrice" placeholder="5000"/></div>
       <div class="fg"><label>Stok (pcs)</label><input type="number" id="fStock" placeholder="50"/></div>
     </div>
-    <div class="fg"><label>Fitur / Keunggulan (pisah koma)</label><input type="text" id="fFeats" placeholder="Tahan air, Warna cerah, Anti luntur"/></div>
+    <div class="fg"><label>Fitur (pisah koma)</label><input type="text" id="fFeats" placeholder="Tahan air, Warna cerah"/></div>
     <div class="fg"><label>No. WhatsApp Penjual</label><input type="text" id="fWa" placeholder="6281234567890"/></div>
     <div class="btn-row">
       <button class="cancel-btn" id="cancelProd">Batal</button>
@@ -375,7 +271,7 @@ footer a{color:var(--amber);text-decoration:none;}
   </div>
 </div>
 
-<!-- OVERLAY: HAPUS -->
+<!-- HAPUS MODAL -->
 <div class="overlay" id="delModal">
   <div class="modal" style="max-width:340px;text-align:center;">
     <div class="del-icon">🗑️</div>
@@ -388,13 +284,12 @@ footer a{color:var(--amber);text-decoration:none;}
   </div>
 </div>
 
-<!-- WA FLOAT -->
 <button class="wa-float" id="waFloat" title="Hubungi via WhatsApp">
   <svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.122.556 4.112 1.528 5.837L.057 23.5l5.805-1.52A11.943 11.943 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.907 0-3.693-.5-5.24-1.373l-.374-.222-3.896 1.02 1.04-3.797-.244-.39A9.96 9.96 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
 </button>
 
 <footer>
-  <p>© 2025 <strong id="footerName">Syakila ATK Store</strong> — Hubungi kami di <a id="footerWa" href="#">WhatsApp</a></p>
+  <p>© 2025 <strong>Syakila ATK Store</strong> — Hubungi kami di <a id="footerWa" href="#">WhatsApp</a></p>
   <p style="margin-top:6px;font-size:.72rem;opacity:.5;">Login admin: klik ikon 🔑 di pojok kanan atas</p>
 </footer>
 <div class="toast" id="toast"></div>
@@ -404,136 +299,107 @@ footer a{color:var(--amber);text-decoration:none;}
 //  ⚙️  CONFIG
 // ══════════════════════════════════════════
 var CONFIG = {
-  storeName: 'Syakila ATK Store',
-  waDefault: '6281234567890', // WhatsApp default penjual
-  adminPassword: 'syakila',   // ← PASSWORD ADMIN
-  categories: ['Semua','Pensil & Pena','Buku & Kertas','Alat Gambar','Aksesori Meja','Perlengkapan Kantor','Lainnya'],
-  defaultProducts: [
-    {
-      id:1, name:'Pensil 2B Faber-Castell', icon:'✏️', category:'Pensil & Pena',
-      description:'Pensil berkualitas tinggi dengan tingkat kegelapan 2B, cocok untuk menulis, sketsa, dan ujian.',
-      features:['Grade 2B','Isi dapat diganti','Anti patah','Lembut di kertas'],
-      price:3500, stock:120, badge:'POPULER',
-      img:'', wa:'6281234567890',
-      orderMessage:'Halo kak, saya mau order Pensil 2B Faber-Castell. Masih ada stok?'
-    },
-    {
-      id:2, name:'Pulpen Pilot G2 0.5mm', icon:'🖊️', category:'Pensil & Pena',
-      description:'Pulpen gel premium dengan tinta smooth, tidak bocor, dan hasil tulisan rapi dan elegan.',
-      features:['Tinta gel','0.5mm fine tip','Anti bocor','Grip ergonomis'],
-      price:12000, stock:85, badge:'BEST SELLER',
-      img:'', wa:'6281234567890',
-      orderMessage:'Halo kak, saya mau order Pulpen Pilot G2. Masih ada stok?'
-    },
-    {
-      id:3, name:'Buku Tulis Sidu 58 Lembar', icon:'📒', category:'Buku & Kertas',
-      description:'Buku tulis bergaris rapi dengan kertas tebal anti tembus dan sampul menarik.',
-      features:['58 lembar','Kertas HVS 60gr','Garis biru','Anti tembus'],
-      price:4500, stock:200, badge:null,
-      img:'', wa:'6281234567890',
-      orderMessage:'Halo kak, saya mau order Buku Tulis Sidu. Masih ada stok?'
-    },
-    {
-      id:4, name:'Stabilo Boss Highlighter Set 4', icon:'🖍️', category:'Alat Gambar',
-      description:'Set highlighter 4 warna cerah yang tidak merusak tinta printer maupun tinta pulpen.',
-      features:['4 warna','Tinta cerah','Tidak merusak teks','Chisel tip'],
-      price:28000, stock:45, badge:'PROMO',
-      img:'', wa:'6281234567890',
-      orderMessage:'Halo kak, saya mau order Stabilo Boss Set 4. Masih ada stok?'
-    },
-    {
-      id:5, name:'Penggaris Besi 30cm', icon:'📏', category:'Aksesori Meja',
-      description:'Penggaris besi anti karat presisi tinggi, tahan lama untuk gambar teknik dan tulis.',
-      features:['Bahan besi','30cm','Anti karat','Presisi tinggi'],
-      price:15000, stock:60, badge:null,
-      img:'', wa:'6281234567890',
-      orderMessage:'Halo kak, saya mau order Penggaris Besi 30cm. Masih ada stok?'
-    },
-    {
-      id:6, name:'Stapler Joyko No.10', icon:'📌', category:'Perlengkapan Kantor',
-      description:'Stapler mini ringan untuk kebutuhan kantor dan rumah, muat staples No.10.',
-      features:['Mini & ringan','No.10 staples','Anti macet','Kapasitas 20 lembar'],
-      price:18000, stock:3, badge:null,
-      img:'', wa:'+6282298151430',
-      orderMessage:'Halo kak, saya mau order Stapler Joyko. Masih ada stok?'
-    }
-  ]
+  storeName:     'Syakila ATK Store',
+  waDefault:     '6281234567890',
+  adminPassword: 'syakila',
+  categories:    ['Semua','Pensil & Pena','Buku & Kertas','Alat Gambar','Aksesori Meja','Perlengkapan Kantor','Lainnya'],
+};
+
+// 🗃️ JSONBIN — sudah terpasang, tidak perlu diubah
+var JSONBIN = {
+  API_KEY:    '$2a$10$Cw3J82QoT.3Jf0vOIdI3ru3HzBdqeHslgw2trkTFDfQ.XS4F5WcNO',
+  ACCESS_KEY: '$2a$10$p8kN973jfSNpRI5ZK0sNHejrGT5O4HONZy7p.QE/tOsV6MrTIlgV2',
+  BIN_ID:     '69a9ec6ed0ea881f40f2d909',
 };
 // ══════════════════════════════════════════
 
+var BASE_URL = 'https://api.jsonbin.io/v3/b';
+
 // ── STATE ──
-var isAdmin = false;
+var isAdmin      = false;
 var activeFilter = 'Semua';
-var searchQuery = '';
-var extraProducts = [];
-var overrides = {};
+var searchQuery  = '';
 var pendingDelId = null;
-var isEditMode = false;
-var uploadedImgData = ''; // base64
-
-// Load dari localStorage
-(function(){
-  try {
-    var raw = localStorage.getItem('syakila_atk_v1');
-    if(raw){ var d=JSON.parse(raw); extraProducts=d.extras||[]; overrides=d.overrides||{}; }
-  } catch(e){}
-})();
-
-function saveLS(){
-  try{ localStorage.setItem('syakila_atk_v1',JSON.stringify({extras:extraProducts,overrides:overrides})); }catch(e){}
-}
-
-function getAllProducts(){
-  var defaults = CONFIG.defaultProducts.map(function(p){
-    return overrides[p.id] ? Object.assign({},p,overrides[p.id]) : Object.assign({},p);
-  });
-  return defaults.concat(extraProducts);
-}
-
-function getFiltered(){
-  var all = getAllProducts();
-  if(activeFilter !== 'Semua') all = all.filter(function(p){ return p.category === activeFilter; });
-  if(searchQuery) all = all.filter(function(p){
-    var q = searchQuery.toLowerCase();
-    return p.name.toLowerCase().includes(q) || p.description.toLowerCase().includes(q) || p.category.toLowerCase().includes(q);
-  });
-  return all;
-}
+var isEditMode   = false;
+var uploadedImg  = '';
+var allProducts  = [];
 
 // ── UTILS ──
 function fmt(n){ return Number(n).toLocaleString('id-ID'); }
-function tgLink(p){ return 'https://wa.me/'+(p.wa||CONFIG.waDefault)+'?text='+encodeURIComponent(p.orderMessage||'Halo, saya ingin order '+p.name); }
+function waLink(p){ return 'https://wa.me/'+(p.wa||CONFIG.waDefault)+'?text='+encodeURIComponent(p.orderMessage||'Halo kak, saya mau order '+p.name+'. Masih ada stok?'); }
 function stockStatus(s){
   s=parseInt(s)||0;
   if(s<=0) return {cls:'out-stock',label:'Habis'};
   if(s<=5) return {cls:'low-stock',label:'Stok '+s};
   return {cls:'in-stock',label:'Tersedia'};
 }
-
-function toast(msg, type){
+function toast(msg,type){
   var t=document.getElementById('toast');
   t.textContent=msg; t.className='toast show'+(type?' '+type:'');
-  clearTimeout(t._t); t._t=setTimeout(function(){t.className='toast';},3000);
+  clearTimeout(t._t); t._t=setTimeout(function(){t.className='toast';},3500);
 }
 function openModal(id){ document.getElementById(id).classList.add('open'); }
 function closeModal(id){ document.getElementById(id).classList.remove('open'); }
 
 // ── STORE INFO ──
-document.getElementById('siteName').textContent = CONFIG.storeName;
-document.getElementById('footerName').textContent = CONFIG.storeName;
 document.getElementById('footerWa').href = 'https://wa.me/'+CONFIG.waDefault;
 document.getElementById('footerWa').textContent = '+'+CONFIG.waDefault;
 document.getElementById('waFloat').onclick = function(){ window.open('https://wa.me/'+CONFIG.waDefault,'_blank'); };
 document.title = CONFIG.storeName;
 
+// ── KOMPRES GAMBAR (maks 400px, quality 0.6) ──
+function compressImage(file, cb){
+  var reader = new FileReader();
+  reader.onload = function(e){
+    var img = new Image();
+    img.onload = function(){
+      var MAX = 400;
+      var w = img.width, h = img.height;
+      if(w > h){ if(w>MAX){h=Math.round(h*MAX/w);w=MAX;} }
+      else{ if(h>MAX){w=Math.round(w*MAX/h);h=MAX;} }
+      var canvas = document.createElement('canvas');
+      canvas.width=w; canvas.height=h;
+      canvas.getContext('2d').drawImage(img,0,0,w,h);
+      cb(canvas.toDataURL('image/jpeg',0.6));
+    };
+    img.src = e.target.result;
+  };
+  reader.readAsDataURL(file);
+}
+
+// ── JSONBIN API ──
+async function loadProducts(){
+  try {
+    var res = await fetch(BASE_URL+'/'+JSONBIN.BIN_ID+'/latest',{
+      headers:{'X-Access-Key': JSONBIN.ACCESS_KEY}
+    });
+    if(!res.ok){ var e=await res.json(); throw new Error(e.message||res.status); }
+    var data = await res.json();
+    allProducts = (data.record && data.record.products) ? data.record.products : [];
+    renderAll();
+  } catch(e){
+    document.getElementById('grid').innerHTML=
+      '<div style="grid-column:1/-1;text-align:center;padding:60px 20px;color:var(--red)">'+
+      '❌ Gagal memuat produk<br/><small style="color:var(--muted)">'+e.message+'</small></div>';
+  }
+}
+
+async function saveProducts(){
+  var res = await fetch(BASE_URL+'/'+JSONBIN.BIN_ID,{
+    method:'PUT',
+    headers:{'Content-Type':'application/json','X-Master-Key':JSONBIN.API_KEY},
+    body: JSON.stringify({products:allProducts})
+  });
+  if(!res.ok){ var e=await res.json(); throw new Error(e.message||res.status); }
+}
+
 // ── RENDER STATS ──
 function renderStats(){
-  var all = getAllProducts();
-  var cats = {};
-  all.forEach(function(p){ cats[p.category]=1; });
-  var total = all.reduce(function(s,p){ return s+(parseInt(p.stock)||0); },0);
-  document.getElementById('statsRow').innerHTML =
-    '<div class="stat-box"><span class="stat-val">'+all.length+'</span><span class="stat-lbl">Produk</span></div>'+
+  var cats={};
+  allProducts.forEach(function(p){cats[p.category]=1;});
+  var total=allProducts.reduce(function(s,p){return s+(parseInt(p.stock)||0);},0);
+  document.getElementById('statsRow').innerHTML=
+    '<div class="stat-box"><span class="stat-val">'+allProducts.length+'</span><span class="stat-lbl">Produk</span></div>'+
     '<div class="stat-box"><span class="stat-val">'+Object.keys(cats).length+'</span><span class="stat-lbl">Kategori</span></div>'+
     '<div class="stat-box"><span class="stat-val">'+total+'</span><span class="stat-lbl">Total Stok</span></div>'+
     '<div class="stat-box"><span class="stat-val">24/7</span><span class="stat-lbl">Layanan</span></div>';
@@ -541,50 +407,47 @@ function renderStats(){
 
 // ── RENDER FILTER ──
 function renderFilter(){
-  var sec = document.getElementById('filterSection');
+  var sec=document.getElementById('filterSection');
   sec.innerHTML='';
   CONFIG.categories.forEach(function(cat){
     var btn=document.createElement('button');
     btn.className='filter-chip'+(cat===activeFilter?' active':'');
     btn.textContent=cat;
-    btn.onclick=function(){ activeFilter=cat; renderFilter(); renderGrid(); };
+    btn.onclick=function(){activeFilter=cat;renderFilter();renderGrid();};
     sec.appendChild(btn);
   });
 }
 
 // ── RENDER GRID ──
 function renderGrid(){
-  var grid = document.getElementById('grid');
-  var list = getFiltered();
-  document.getElementById('prodCount').textContent = list.length+' item';
+  var grid=document.getElementById('grid');
+  var list=allProducts.filter(function(p){
+    if(activeFilter!=='Semua' && p.category!==activeFilter) return false;
+    if(searchQuery){
+      var q=searchQuery.toLowerCase();
+      return p.name.toLowerCase().includes(q)||p.description.toLowerCase().includes(q)||p.category.toLowerCase().includes(q);
+    }
+    return true;
+  });
+  document.getElementById('prodCount').textContent=list.length+' item';
   grid.innerHTML='';
 
   if(list.length===0){
-    grid.innerHTML='<div class="empty-state" style="grid-column:1/-1"><div class="e-icon">📭</div><p>Produk tidak ditemukan.<br/>Coba kata kunci lain atau tambah produk baru.</p></div>';
+    grid.innerHTML='<div style="grid-column:1/-1;text-align:center;padding:60px 20px;color:var(--muted)"><div style="font-size:3rem;margin-bottom:12px">📭</div><p>'+(isAdmin?'Belum ada produk. Klik ➕ untuk tambah!':'Belum ada produk.')+'</p></div>';
   }
 
   list.forEach(function(p,i){
-    var isExtra = !CONFIG.defaultProducts.find(function(d){ return d.id===p.id; });
-    var ss = stockStatus(p.stock);
-    var card = document.createElement('div');
+    var ss=stockStatus(p.stock);
+    var card=document.createElement('div');
     card.className='pcard';
     card.style.animationDelay=(i*0.04)+'s';
-
-    // Image area
-    var imgHtml='';
-    if(p.img){
-      imgHtml='<div class="pcard-img"><img src="'+p.img+'" alt="'+p.name+'" loading="lazy"/></div>';
-    } else {
-      imgHtml='<div class="pcard-img no-img" style="font-size:3rem;display:flex;align-items:center;justify-content:center;">'+(p.icon||'📦')+'</div>';
-    }
-
-    var featsHtml = (p.features||[]).map(function(f){ return '<span class="feat-tag">'+f+'</span>'; }).join('');
-    var badgeHtml = p.badge ? '<div class="pcard-badge">'+p.badge+'</div>' : '';
-    var delLabel = isExtra ? '🗑️ Hapus' : '🔄 Reset';
-
-    card.innerHTML =
-      imgHtml +
-      badgeHtml +
+    var imgHtml=p.img
+      ?'<div class="pcard-img"><img src="'+p.img+'" alt="'+p.name+'" loading="lazy"/></div>'
+      :'<div class="pcard-img no-img" style="font-size:3rem;">'+(p.icon||'📦')+'</div>';
+    var featsHtml=(p.features||[]).map(function(f){return '<span class="feat-tag">'+f+'</span>';}).join('');
+    card.innerHTML=
+      imgHtml+
+      (p.badge?'<div class="pcard-badge">'+p.badge+'</div>':'')+
       '<div class="pcard-stock-badge '+ss.cls+'">'+ss.label+'</div>'+
       '<div class="pcard-body">'+
         '<div class="pcard-cat">'+p.category+'</div>'+
@@ -592,38 +455,33 @@ function renderGrid(){
         '<div class="pcard-desc">'+p.description+'</div>'+
         (featsHtml?'<div class="pcard-feats">'+featsHtml+'</div>':'')+
         '<div class="pcard-foot">'+
-          '<div class="price-wrap">'+
-            '<div class="price-lbl">Harga</div>'+
-            '<div class="price-val"><small>Rp </small>'+fmt(p.price)+'</div>'+
-          '</div>'+
-          '<a href="'+tgLink(p)+'" target="_blank" class="order-btn">'+
+          '<div class="price-wrap"><div class="price-lbl">Harga</div><div class="price-val"><small>Rp </small>'+fmt(p.price)+'</div></div>'+
+          '<a href="'+waLink(p)+'" target="_blank" class="order-btn">'+
             '<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.122.556 4.112 1.528 5.837L.057 23.5l5.805-1.52A11.943 11.943 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.907 0-3.693-.5-5.24-1.373l-.374-.222-3.896 1.02 1.04-3.797-.244-.39A9.96 9.96 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>'+
-            'Order WA'+
-          '</a>'+
+            'Order WA</a>'+
         '</div>'+
       '</div>'+
       '<div class="admin-actions">'+
         '<button class="btn-edit" data-id="'+p.id+'">✏️ Edit</button>'+
-        '<button class="btn-del" data-id="'+p.id+'" data-name="'+p.name+'" data-extra="'+(isExtra?'1':'0')+'">'+delLabel+'</button>'+
+        '<button class="btn-del" data-id="'+p.id+'" data-name="'+p.name+'">🗑️ Hapus</button>'+
       '</div>';
-
     grid.appendChild(card);
   });
 
-  // Add card
   var addCard=document.createElement('div');
   addCard.className='add-card';
   addCard.innerHTML='<div class="add-card-icon">➕</div><div class="add-card-text">Tambah Produk Baru</div>';
-  addCard.onclick=function(){ openAddModal(); };
+  addCard.onclick=function(){openAddModal();};
   grid.appendChild(addCard);
 
-  // Events
   grid.querySelectorAll('.btn-edit').forEach(function(btn){
-    btn.addEventListener('click',function(){ openEditModal(parseInt(btn.getAttribute('data-id'))); });
+    btn.addEventListener('click',function(){openEditModal(btn.getAttribute('data-id'));});
   });
   grid.querySelectorAll('.btn-del').forEach(function(btn){
     btn.addEventListener('click',function(){
-      openDelModal(parseInt(btn.getAttribute('data-id')), btn.getAttribute('data-name'), btn.getAttribute('data-extra')==='1');
+      pendingDelId=btn.getAttribute('data-id');
+      document.getElementById('delSub').innerHTML='Produk <strong>'+btn.getAttribute('data-name')+'</strong> akan dihapus permanen.';
+      openModal('delModal');
     });
   });
 }
@@ -631,49 +489,46 @@ function renderGrid(){
 function renderAll(){ renderStats(); renderFilter(); renderGrid(); }
 
 // ── IMAGE UPLOAD ──
-document.getElementById('imgUploadArea').addEventListener('click',function(){ document.getElementById('fileInput').click(); });
+document.getElementById('imgUploadArea').addEventListener('click',function(){document.getElementById('fileInput').click();});
 document.getElementById('fileInput').addEventListener('change',function(e){
   var file=e.target.files[0];
   if(!file) return;
-  if(file.size > 5*1024*1024){ toast('❌ Gambar terlalu besar (maks 5MB)','err'); return; }
-  var reader=new FileReader();
-  reader.onload=function(ev){
-    uploadedImgData=ev.target.result;
+  compressImage(file, function(dataUrl){
+    uploadedImg=dataUrl;
     var prev=document.getElementById('imgPreview');
-    prev.src=uploadedImgData; prev.style.display='block';
+    prev.src=dataUrl; prev.style.display='block';
     document.getElementById('imgUploadArea').querySelector('.upload-icon').style.display='none';
     document.getElementById('imgUploadArea').querySelector('.upload-hint').style.display='none';
-  };
-  reader.readAsDataURL(file);
+  });
 });
 
-function resetImgUpload(){
-  uploadedImgData='';
-  document.getElementById('imgPreview').src=''; document.getElementById('imgPreview').style.display='none';
+function resetImg(){
+  uploadedImg='';
+  document.getElementById('imgPreview').src='';
+  document.getElementById('imgPreview').style.display='none';
   document.getElementById('imgUploadArea').querySelector('.upload-icon').style.display='block';
   document.getElementById('imgUploadArea').querySelector('.upload-hint').style.display='block';
   document.getElementById('fileInput').value='';
 }
 
-// ── FORM MODAL ──
+// ── FORM ──
 function clearForm(){
-  ['fId','fName','fIcon','fDesc','fPrice','fStock','fFeats','fBadge','fWa'].forEach(function(id){ document.getElementById(id).value=''; });
+  ['fId','fName','fIcon','fDesc','fPrice','fStock','fFeats','fBadge','fWa'].forEach(function(id){document.getElementById(id).value='';});
   document.getElementById('fCat').value='Pensil & Pena';
   document.getElementById('fWa').value=CONFIG.waDefault;
-  resetImgUpload();
+  resetImg();
 }
 
 function openAddModal(){
   isEditMode=false; clearForm();
   document.getElementById('prodModalTitle').textContent='➕ Tambah Produk';
-  document.getElementById('prodModalSub').textContent='Isi data produk ATK baru.';
+  document.getElementById('prodModalSub').textContent='Produk langsung terlihat semua pelanggan.';
   document.getElementById('saveProd').textContent='💾 Simpan Produk';
   openModal('prodModal');
 }
 
 function openEditModal(id){
-  var all=getAllProducts(), p=null;
-  for(var i=0;i<all.length;i++){ if(all[i].id===id){p=all[i];break;} }
+  var p=allProducts.find(function(x){return x.id===id;});
   if(!p) return;
   isEditMode=true; clearForm();
   document.getElementById('fId').value=p.id;
@@ -687,85 +542,84 @@ function openEditModal(id){
   document.getElementById('fBadge').value=p.badge||'';
   document.getElementById('fWa').value=p.wa||CONFIG.waDefault;
   if(p.img){
-    uploadedImgData=p.img;
+    uploadedImg=p.img;
     var prev=document.getElementById('imgPreview');
     prev.src=p.img; prev.style.display='block';
     document.getElementById('imgUploadArea').querySelector('.upload-icon').style.display='none';
     document.getElementById('imgUploadArea').querySelector('.upload-hint').style.display='none';
   }
   document.getElementById('prodModalTitle').textContent='✏️ Edit: '+p.name;
-  document.getElementById('prodModalSub').textContent='Ubah data produk lalu simpan.';
+  document.getElementById('prodModalSub').textContent='Perubahan langsung terlihat semua pelanggan.';
   document.getElementById('saveProd').textContent='💾 Simpan Perubahan';
   openModal('prodModal');
 }
 
-function openDelModal(id, name, isExtra){
-  pendingDelId=id;
-  document.getElementById('delSub').innerHTML='Produk <strong>'+name+'</strong> akan '+(isExtra?'dihapus permanen.':'direset ke data awal.');
-  openModal('delModal');
-}
-
-// SAVE
-document.getElementById('saveProd').addEventListener('click',function(){
+// ── SAVE ──
+document.getElementById('saveProd').addEventListener('click', async function(){
   var name=document.getElementById('fName').value.trim();
   var desc=document.getElementById('fDesc').value.trim();
-  var price=parseInt(document.getElementById('fPrice').value)||0;
-  if(!name||!desc){ toast('❌ Nama & deskripsi wajib diisi!','err'); return; }
-
-  var icon=document.getElementById('fIcon').value.trim()||'📦';
-  var cat=document.getElementById('fCat').value;
-  var stock=parseInt(document.getElementById('fStock').value)||0;
+  if(!name||!desc){toast('❌ Nama & deskripsi wajib diisi!','err');return;}
+  var btn=document.getElementById('saveProd');
+  btn.disabled=true; btn.textContent='⏳ Menyimpan...';
   var featsRaw=document.getElementById('fFeats').value.trim();
-  var features=featsRaw?featsRaw.split(',').map(function(f){return f.trim();}).filter(Boolean):[];
-  var badge=document.getElementById('fBadge').value.trim()||null;
-  var wa=document.getElementById('fWa').value.trim()||CONFIG.waDefault;
   var data={
-    name:name,icon:icon,category:cat,description:desc,
-    price:price,stock:stock,features:features,badge:badge,wa:wa,
-    img:uploadedImgData,
+    name:name,
+    icon:document.getElementById('fIcon').value.trim()||'📦',
+    category:document.getElementById('fCat').value,
+    description:desc,
+    price:parseInt(document.getElementById('fPrice').value)||0,
+    stock:parseInt(document.getElementById('fStock').value)||0,
+    features:featsRaw?featsRaw.split(',').map(function(f){return f.trim();}).filter(Boolean):[],
+    badge:document.getElementById('fBadge').value.trim()||null,
+    wa:document.getElementById('fWa').value.trim()||CONFIG.waDefault,
+    img:uploadedImg,
     orderMessage:'Halo kak, saya mau order *'+name+'*. Masih ada stok? 🛒'
   };
-
   if(isEditMode){
-    var id=parseInt(document.getElementById('fId').value);
-    var isDef=CONFIG.defaultProducts.find(function(d){return d.id===id;});
-    if(isDef){ overrides[id]=data; }
-    else{
-      for(var i=0;i<extraProducts.length;i++){
-        if(extraProducts[i].id===id){extraProducts[i]=Object.assign({},extraProducts[i],data);break;}
-      }
-    }
-    toast('✅ "'+name+'" berhasil diperbarui!','ok');
+    var id=document.getElementById('fId').value;
+    allProducts=allProducts.map(function(p){return p.id===id?Object.assign({},p,data):p;});
   } else {
-    data.id=Date.now();
-    extraProducts.push(data);
-    toast('✅ "'+name+'" berhasil ditambahkan!','ok');
+    data.id='atk_'+Date.now();
+    allProducts.push(data);
   }
-  saveLS(); closeModal('prodModal'); activeFilter='Semua'; renderAll();
+  try{
+    await saveProducts();
+    toast('✅ "'+name+'" berhasil '+(isEditMode?'diperbarui':'ditambahkan')+'!','ok');
+    closeModal('prodModal'); renderAll();
+  } catch(e){
+    toast('❌ Gagal simpan: '+e.message,'err');
+    // rollback
+    if(!isEditMode) allProducts.pop();
+  }
+  btn.disabled=false; btn.textContent=isEditMode?'💾 Simpan Perubahan':'💾 Simpan Produk';
 });
 
-// DELETE
-document.getElementById('confirmDel').addEventListener('click',function(){
+// ── HAPUS ──
+document.getElementById('confirmDel').addEventListener('click', async function(){
   if(!pendingDelId) return;
-  var isDef=CONFIG.defaultProducts.find(function(d){return d.id===pendingDelId;});
-  if(isDef){ delete overrides[pendingDelId]; toast('🔄 Produk direset ke data awal','warn'); }
-  else{ extraProducts=extraProducts.filter(function(p){return p.id!==pendingDelId;}); toast('🗑️ Produk berhasil dihapus'); }
-  saveLS(); pendingDelId=null; closeModal('delModal'); renderAll();
+  var btn=document.getElementById('confirmDel');
+  btn.disabled=true; btn.textContent='⏳...';
+  var prev=allProducts.slice();
+  allProducts=allProducts.filter(function(p){return p.id!==pendingDelId;});
+  try{
+    await saveProducts();
+    toast('🗑️ Produk berhasil dihapus');
+    pendingDelId=null; closeModal('delModal'); renderAll();
+  } catch(e){
+    allProducts=prev;
+    toast('❌ Gagal hapus: '+e.message,'err');
+  }
+  btn.disabled=false; btn.textContent='🗑️ Hapus';
 });
 
-// MODAL CLOSE
+// ── MODAL EVENTS ──
 document.getElementById('cancelDel').addEventListener('click',function(){closeModal('delModal');});
 document.getElementById('delModal').addEventListener('click',function(e){if(e.target.id==='delModal')closeModal('delModal');});
 document.getElementById('closeProdModal').addEventListener('click',function(){closeModal('prodModal');});
 document.getElementById('cancelProd').addEventListener('click',function(){closeModal('prodModal');});
 document.getElementById('prodModal').addEventListener('click',function(e){if(e.target.id==='prodModal')closeModal('prodModal');});
 document.getElementById('loginModal').addEventListener('click',function(e){if(e.target.id==='loginModal')closeModal('loginModal');});
-
-// ── SEARCH ──
-document.getElementById('searchInput').addEventListener('input',function(e){
-  searchQuery=e.target.value.trim();
-  renderGrid();
-});
+document.getElementById('searchInput').addEventListener('input',function(e){searchQuery=e.target.value.trim();renderGrid();});
 
 // ── ADMIN ──
 function setAdmin(on){
@@ -776,38 +630,36 @@ function setAdmin(on){
   document.getElementById('fabLogin').title=on?'Tambah Produk':'Admin Login';
   renderGrid();
 }
-
 document.getElementById('fabLogin').addEventListener('click',function(){
-  if(isAdmin){ openAddModal(); }
-  else{ openModal('loginModal'); setTimeout(function(){document.getElementById('pwInput').focus();},150); }
+  if(isAdmin){openAddModal();}
+  else{openModal('loginModal');setTimeout(function(){document.getElementById('pwInput').focus();},150);}
 });
-
 function doLogin(){
   var pw=document.getElementById('pwInput').value;
-  var err=document.getElementById('loginErr');
   if(pw===CONFIG.adminPassword){
-    err.classList.remove('show');
+    document.getElementById('loginErr').classList.remove('show');
     document.getElementById('pwInput').value='';
     closeModal('loginModal');
     setAdmin(true);
     toast('✅ Selamat datang, Admin!','ok');
   } else {
-    err.classList.add('show');
+    document.getElementById('loginErr').classList.add('show');
     document.getElementById('pwInput').value='';
     document.getElementById('pwInput').focus();
   }
 }
-
 document.getElementById('loginBtn').addEventListener('click',doLogin);
 document.getElementById('pwInput').addEventListener('keydown',function(e){if(e.key==='Enter')doLogin();});
 document.getElementById('pwEye').addEventListener('click',function(){
   var i=document.getElementById('pwInput');
   i.type=i.type==='password'?'text':'password';
 });
-document.getElementById('logoutBtn').addEventListener('click',function(){ setAdmin(false); toast('👋 Keluar dari mode admin'); });
+document.getElementById('logoutBtn').addEventListener('click',function(){setAdmin(false);toast('👋 Keluar dari mode admin');});
 
 // ── BOOT ──
-renderAll();
+renderFilter();
+renderStats();
+loadProducts();
 </script>
 </body>
 </html>
